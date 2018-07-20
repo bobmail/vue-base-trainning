@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Hello World</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>Hello World !</h1>
+  <div id = "app">
+    <p v-jspang="color">{{num}}</p>
+    <button @click="add">ADD</button>
+  </div>
+
+</body>
+</html>
+
+<script>
+  Vue.directive("jspang",function(el,binding){
+    console.log(el);
+    console.log(binding);
+    console.log(binding.name);
+    console.log(binding.value);
+    console.log(binding.expression);
+    el.style="color:"+binding.value;
+  })
+  var app = new Vue({
+    el: '#app',
+    data:{
+      num:10,
+      color:"green"
+    },
+    methods:{
+      add:function(){
+        this.num++
+      }
+    }
+  })
+</script>
