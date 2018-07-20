@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>v-on lesson</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>V-on lesson !</h1>
+  <div id = "app">
+    Current count:<br/>
+    {{count}}<br/>
+    <button v-on:click="increase">Add</button>
+    <button v-on:click="decrease">Reduce</button>
+    <br/>
+    <input type="text" v-on:keyup.enter="onEnter" v-model="count2">
+  </div>
+
+</body>
+</html>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data:{
+      message:"It's my world!",
+      isLogin:true,
+      count:0,
+      count2:0,
+      },
+    methods:{
+      increase:function(){
+        this.count++
+      },
+      decrease:function(){
+        this.count--
+      },
+      onEnter:function(){
+        this.count = this.count + parseInt(this.count2)
+      }
+    }
+  })
+</script>

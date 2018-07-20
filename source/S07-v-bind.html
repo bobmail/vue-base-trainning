@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Hello World</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>Hello World !</h1>
+  <div id = "app">
+    {{message}}<br>
+    <img :src="imgSrc" width="100"/>
+    <a :href="webUrl" target="_blank">jspang</a>
+    <p :class="className">test bind class1</p>
+    <p :class="{classA:isLogin}">test bind class2</p>
+    <p :class="[classA,classB]">test bind class3</p>
+    <p :class="isLogin?classA:classB">test bind class4</p>
+
+    <input type="checkbox" id="islogin" v-model="isLogin">
+    <label for="islogin">islogin={{isLogin}}</label>
+
+    <p :style="{color:red,fontSize:fontsize}">test bind style1</p>
+    <p :style="styleObj">test bind style2</p>
+  </div>
+
+</body>
+</html>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data:{
+      message:"It's my world!",
+      isLogin:true,
+      imgSrc:"http://jspang.com/wp-content/uploads/2018/01/dashangwx.jpg",
+      webUrl:"http://jspang.com",
+      className:"classA",
+      classA:"classA",
+      classB:"classB",
+      red:"green",
+      fontsize:"24px",
+      styleObj:{
+        color:"yellow",
+        fontSize:"48px"
+      }
+    }
+  })
+</script>
+
+<style>
+  .classA{
+    color:red
+  }
+  .classB{
+    font-size: 150%
+  }
+</style>

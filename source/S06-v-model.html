@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Hello World</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+    <p>origin content:{{message}}</p>
+
+    <p>input area</p>
+    <textarea cols="30" rows="10" v-model="message"></textarea>
+    <p>input label</p>
+    <input type="checkbox" id="isSelected" v-model="isTrue">
+    <label for="isSelected">{{isTrue}}</label>
+    <hr>
+    <p>input content by array:</p>
+    <input type="checkbox" id="bob" value="bob" v-model="selects">
+    <label for="bob">Bob</label>
+    <input type="checkbox" id="gray" value="gray" v-model="selects">
+    <label for="gray">Gray</label>
+    <input type="checkbox" id="wan" value="wan" v-model="selects">
+    <label for="wan">Wan</label>
+    <p>{{selects}}</p>
+    <input type="radio" id="one" value="man" v-model="sex">
+    <label for="one">man</label>
+    <input type="radio" id="two" value="woman" v-model="sex">
+    <label for="two">woman</label>
+
+    <p>{{sex}}</p>
+  </div>
+  
+
+</body>
+</html>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data:{
+      message:"It's my world!",
+      isLogin:true,
+      isTrue:false,
+      selects:[],
+      sex:"man"
+    }
+  })
+</script>

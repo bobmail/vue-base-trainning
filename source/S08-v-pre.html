@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Hello World</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>Hello World !</h1>
+  <div id = "app">
+    <p v-pre>{{message}}</p>
+    <div v-cloak>finished DOM render,than to display</div>
+    <div v-once>{{message}}</div>
+    <div >{{message}}</div>
+    <input type="text" v-model="message">
+  </div>
+
+</body>
+</html>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data:{
+      message:"It's my world!",
+      isLogin:true
+    }
+  })
+</script>
