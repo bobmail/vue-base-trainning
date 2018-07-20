@@ -12,19 +12,43 @@
     <p v-jspang="color">{{num}}</p>
     <button @click="add">ADD</button>
   </div>
-
+  <button onclick="unbind()">Unbind</button>
 </body>
 </html>
 
-<script>
-  Vue.directive("jspang",function(el,binding){
+<script type="text/javascript">
+  function unbind(){
+    app.$destroy();
+  }
+  Vue.directive("jspang",{
+    bind:function(){
+      console.log("1 - bind");
+
+    },
+    inserted:function(){
+      console.log("2 - inserted");
+    },
+    update:function(el,binding){
+      console.log("3 - update");
+      el.style="color:"+binding.value;
+    },
+    componentUpdated:function(){
+      console.log("4 - component updated");
+    },
+    unbind:function(){
+      console.log("5 - unbind");
+    }
+  });
+  /*
+    Vue.directive("jspang",function(el,binding){
     console.log(el);
     console.log(binding);
     console.log(binding.name);
     console.log(binding.value);
     console.log(binding.expression);
     el.style="color:"+binding.value;
-  })
+  });
+  */
   var app = new Vue({
     el: '#app',
     data:{
