@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Vue extend</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>Vue Extend</h1>
+  <div id = "author">
+  </div>
+  <p>label format</p>
+  <author></author>
+</body>
+</html>
+
+<script>
+  var authorExtend = Vue.extend({
+    template:"<p><a :href='authorURL'>{{authorName}}</a></p>",
+    data: function(){
+      return {
+        authorName:"JSpang",
+        authorURL:"http://jspang.com"
+      }
+    }
+  
+  });
+
+  new authorExtend().$mount("#author");
+  new authorExtend().$mount("author");
+
+</script>

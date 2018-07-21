@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>S25-template.html</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>S25-template.html !</h1>
+  <div id = "app">
+    {{message}}
+
+
+  </div>
+  <template id="dd2">
+      <h2 style="color:red">This is a template two !</h2>
+  </template>
+
+  <script text="x-template" id="dd3">
+      <h2 style="color:red">This is a template three !</h2>
+  </script>
+
+</body>
+</html>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data:{
+      message:"It's my world!",
+      isLogin:true
+    },
+    //template:`
+    // <h2>This is a template one</h2>
+    //  `
+    template:"#dd3"
+  })
+</script>

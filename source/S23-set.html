@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Vue Set</title>
+  <script type="text/javascript" src ="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>Vue Set !</h1>
+  <div id = "app">
+    <p>{{count}}</p>
+    <ol>
+      <li v-for="item in arr">{{item}}</li>
+    </ol>
+  </div>
+  <hr>
+  <button onclick="add1()">ADD1</button>
+  <button onclick="add2()">ADD2</button>
+  <button onclick="add3()">ADD3</button>
+</body>
+</html>
+
+<script>
+  function add1(){
+    Vue.set(outData,'count',2);
+    Vue.set(outData.arr,1,'dd')
+  };
+
+  function add2(){
+    app.count++;
+    app.arr[1]= 'ddd'
+  };
+
+  function add3(){
+    outData.count++;
+    outData.arr[1] ='ddd'
+    
+
+  };
+
+  var outData={
+    count:10,
+    goods:'car',
+    arr:['aaa','bbb','ccc']
+  }
+  var app = new Vue({
+    el: '#app',
+    data: outData
+  })
+</script>
